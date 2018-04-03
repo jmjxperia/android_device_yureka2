@@ -35,7 +35,7 @@
 #include <cutils/properties.h>
 
 // Camera dependencies
-#include "camera.h"
+#include "hardware/camera.h"
 #include "HAL/QCamera2HWI.h"
 #include "QCameraMuxer.h"
 
