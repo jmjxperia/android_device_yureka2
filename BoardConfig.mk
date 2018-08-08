@@ -234,6 +234,12 @@ TARGET_USE_SDCLANG := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
+# RIL
+DISABLE_RILD_OEM_HOOK := true
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+TARGET_RIL_VARIANT := caf
+TARGET_USES_OLD_MNC_FORMAT := true
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
