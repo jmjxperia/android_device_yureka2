@@ -1,0 +1,36 @@
+type hal_fingerprint_taco, domain, binder_in_vendor_violators;
+hal_server_domain(hal_fingerprint_taco, hal_fingerprint)
+
+type hal_fingerprint_taco_exec, exec_type, vendor_file_type, file_type;
+binder_use(hal_fingerprint_taco)
+init_daemon_domain(hal_fingerprint_taco)
+
+allow hal_fingerprint_taco gx_fpd:binder { transfer call };
+allow hal_fingerprint_taco gx_fpd_service:service_manager find;
+allow hal_fingerprint_taco fingerprint_service:service_manager find;
+allow hal_fingerprint_taco fpc_sysfs:file rw_file_perms;
+allow hal_fingerprint_taco fpc_sysfs:dir rw_dir_perms;
+allow hal_fingerprint_taco tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_taco uhid_device:chr_file rw_file_perms;
+allow hal_fingerprint_taco fpc_data_file:dir rw_dir_perms;
+allow hal_fingerprint_taco fpc_data_file:sock_file create_file_perms;
+allow hal_fingerprint_taco storage_file:dir search;
+allow hal_fingerprint_taco servicemanager:binder { transfer call };
+
+set_prop(hal_fingerprint_taco, system_prop)
+r_dir_file(hal_fingerprint_taco, firmware_file)
+
+add_service(hal_fingerprint_taco, hal_fingerprint_taco_service);
+
+# Need to add auth tokens to KeyStore
+use_keystore(hal_fingerprint_taco)
+allow hal_fingerprint_taco keystore:keystore_key { add_auth };
+# need to find KeyStore and add self
+allow hal_fingerprint_taco hal_fingerprint_taco_service:service_manager { add find };
+# allow hal_fingerprint_taco fingerprintd_service:service_manager { add find };
+
+allow hal_fingerprint_taco keystore_service:service_manager find;
+
+# For permissions checking
+binder_call(hal_fingerprint_taco, system_server);
+allow hal_fingerprint_taco permission_service:service_manager find;
