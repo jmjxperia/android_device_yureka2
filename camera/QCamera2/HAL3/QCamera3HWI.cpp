@@ -1969,6 +1969,7 @@ int QCamera3HardwareInterface::configureStreamsPerfLocked(
                         if (!m_bIsVideo && (streamList->operation_mode ==
                                 CAMERA3_STREAM_CONFIGURATION_CONSTRAINED_HIGH_SPEED_MODE)) {
                             mDummyBatchStream = *newStream;
+                            mDummyBatchStream.usage |= GRALLOC_USAGE_HW_VIDEO_ENCODER;
                         }
                         channel = new QCamera3RegularChannel(mCameraHandle->camera_handle,
                                 mChannelHandle, mCameraHandle->ops, captureResultCb,
@@ -5196,12 +5197,6 @@ QCamera3HardwareInterface::translateFromHalMetadata(
                 hAeRegions->rect.height);
     }
 
-    IF_META_AVAILABLE(uint32_t, afState, CAM_INTF_META_AF_STATE, metadata) {
-        uint8_t fwk_afState = (uint8_t) *afState;
-        camMetadata.update(ANDROID_CONTROL_AF_STATE, &fwk_afState, 1);
-        LOGD("urgent Metadata : ANDROID_CONTROL_AF_STATE %u", *afState);
-    }
-
     IF_META_AVAILABLE(float, focusDistance, CAM_INTF_META_LENS_FOCUS_DISTANCE, metadata) {
         camMetadata.update(ANDROID_LENS_FOCUS_DISTANCE , focusDistance, 1);
     }
@@ -5258,9 +5253,6 @@ QCamera3HardwareInterface::translateFromHalMetadata(
          camMetadata.update(ANDROID_CONTROL_MODE, &fwk_mode, 1);
     }
 
-    /* Constant metadata values to be update*/
-    uint8_t hotPixelModeFast = ANDROID_HOT_PIXEL_MODE_FAST;
-    camMetadata.update(ANDROID_HOT_PIXEL_MODE, &hotPixelModeFast, 1);
 
     uint8_t hotPixelMapMode = ANDROID_STATISTICS_HOT_PIXEL_MAP_MODE_OFF;
     camMetadata.update(ANDROID_STATISTICS_HOT_PIXEL_MAP_MODE, &hotPixelMapMode, 1);
@@ -5526,6 +5518,12 @@ QCamera3HardwareInterface::translateCbUrgentMetadataToResultMetadata
         uint8_t fwk_ae_state = (uint8_t) *ae_state;
         camMetadata.update(ANDROID_CONTROL_AE_STATE, &fwk_ae_state, 1);
         LOGD("urgent Metadata : ANDROID_CONTROL_AE_STATE %u", *ae_state);
+    }
+
+    IF_META_AVAILABLE(uint32_t, afState, CAM_INTF_META_AF_STATE, metadata) {
+        uint8_t fwk_afState = (uint8_t) *afState;
+        camMetadata.update(ANDROID_CONTROL_AF_STATE, &fwk_afState, 1);
+        LOGD("urgent Metadata : ANDROID_CONTROL_AF_STATE %u", *afState);
     }
 
     IF_META_AVAILABLE(uint32_t, focusMode, CAM_INTF_PARM_FOCUS_MODE, metadata) {
@@ -7640,6 +7638,9 @@ camera_metadata_t* QCamera3HardwareInterface::translateCapabilityToMetadata(int 
     uint8_t edge_mode;
     uint8_t noise_red_mode;
     uint8_t tonemap_mode;
+    uint8_t hotpixelMode = ANDROID_HOT_PIXEL_MODE_FAST;
+    uint8_t shadingmode = ANDROID_SHADING_MODE_FAST;
+    uint8_t shadingmap_mode = ANDROID_STATISTICS_LENS_SHADING_MAP_MODE_OFF;
     bool highQualityModeEntryAvailable = FALSE;
     bool fastModeEntryAvailable = FALSE;
     vsMode = ANDROID_CONTROL_VIDEO_STABILIZATION_MODE_OFF;
@@ -7661,6 +7662,11 @@ camera_metadata_t* QCamera3HardwareInterface::translateCapabilityToMetadata(int 
         edge_mode = ANDROID_EDGE_MODE_HIGH_QUALITY;
         noise_red_mode = ANDROID_NOISE_REDUCTION_MODE_HIGH_QUALITY;
         tonemap_mode = ANDROID_TONEMAP_MODE_HIGH_QUALITY;
+        hotpixelMode = ANDROID_HOT_PIXEL_MODE_HIGH_QUALITY;
+        shadingmode = ANDROID_SHADING_MODE_HIGH_QUALITY;
+        if (CAM_SENSOR_RAW == gCamCapability[mCameraId]->sensor_type.sens_type) {
+            shadingmap_mode = ANDROID_STATISTICS_LENS_SHADING_MAP_MODE_ON;
+        }
         cacMode = ANDROID_COLOR_CORRECTION_ABERRATION_MODE_OFF;
         // Order of priority for default CAC is HIGH Quality -> FAST -> OFF
         for (size_t i = 0; i < gCamCapability[mCameraId]->aberration_modes_count; i++) {
@@ -7801,8 +7807,8 @@ camera_metadata_t* QCamera3HardwareInterface::translateCapabilityToMetadata(int 
     static const uint8_t demosaicMode = ANDROID_DEMOSAIC_MODE_FAST;
     settings.update(ANDROID_DEMOSAIC_MODE, &demosaicMode, 1);
 
-    static const uint8_t hotpixelMode = ANDROID_HOT_PIXEL_MODE_FAST;
     settings.update(ANDROID_HOT_PIXEL_MODE, &hotpixelMode, 1);
+    settings.update(ANDROID_SHADING_MODE, &shadingmode, 1);
 
     static const int32_t testpatternMode = ANDROID_SENSOR_TEST_PATTERN_MODE_OFF;
     settings.update(ANDROID_SENSOR_TEST_PATTERN_MODE, &testpatternMode, 1);
@@ -7922,11 +7928,6 @@ camera_metadata_t* QCamera3HardwareInterface::translateCapabilityToMetadata(int 
     uint8_t blacklevel_lock = ANDROID_BLACK_LEVEL_LOCK_OFF;
     settings.update(ANDROID_BLACK_LEVEL_LOCK, &blacklevel_lock, 1);
 
-    /* lens shading map mode */
-    uint8_t shadingmap_mode = ANDROID_STATISTICS_LENS_SHADING_MAP_MODE_OFF;
-    if (CAM_SENSOR_RAW == gCamCapability[mCameraId]->sensor_type.sens_type) {
-        shadingmap_mode = ANDROID_STATISTICS_LENS_SHADING_MAP_MODE_ON;
-    }
     settings.update(ANDROID_STATISTICS_LENS_SHADING_MAP_MODE, &shadingmap_mode, 1);
 
     //special defaults for manual template
