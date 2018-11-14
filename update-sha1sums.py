@@ -18,8 +18,8 @@
 
 from hashlib import sha1
 
-device='taco'
-vendor='cmdc'
+device='YUREKA2'
+vendor='yu'
 
 lines = [ line for line in open('proprietary-files.txt', 'r') ]
 vendorPath = '../../../vendor/' + vendor + '/' + device + '/proprietary'

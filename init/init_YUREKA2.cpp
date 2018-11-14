@@ -119,12 +119,12 @@ void gsi_check()
 
     // override device specific props for GSI & P DP*
     if ((product == "phhgsi_arm64_a") || (product == "marlin")) {
-        property_override("ro.product.model", "YUREKA 2");
+        property_override("ro.product.model", "YU5551");
         property_override("ro.product.brand", "YU");
-        property_override("ro.product.name", "taco");
-        property_override("ro.product.device", "taco");
+        property_override("ro.product.name", "YUREKA2");
+        property_override("ro.product.device", "YUREKA2");
         property_override("ro.product.manufacturer", "YU");
-        property_override("ro.build.product", "taco");
+        property_override("ro.build.product", "YUREKA2");
         property_override("ro.build.description", "wt89536-user 6.0.1 MMB29M eng.zhouchao.20170723.172948 release-keys");
         property_override("ro.build.fingerprint", "YU/YUREKA2/YUREKA2:6.0.1/MMB29M/01112051:user/release-keys");
     }

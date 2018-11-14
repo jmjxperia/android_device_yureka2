@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/cmdc/taco
+DEVICE_PATH := device/yu/YUREKA2
 
-TARGET_OTA_ASSERT_DEVICE := taco,wt89536
+TARGET_OTA_ASSERT_DEVICE := YUREKA2,wt89536
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
@@ -46,8 +46,8 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_CONFIG := taco_defconfig
-TARGET_KERNEL_SOURCE := kernel/cmdc/msm8953
+TARGET_KERNEL_CONFIG := YUREKA2_defconfig
+TARGET_KERNEL_SOURCE := kernel/yu/msm8953
 
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
@@ -167,8 +167,8 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_taco
-TARGET_RECOVERY_DEVICE_MODULES := libinit_taco
+TARGET_INIT_VENDOR_LIB := libinit_YUREKA2
+TARGET_RECOVERY_DEVICE_MODULES := libinit_YUREKA2
 
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += \
@@ -247,4 +247,4 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Inherit from the proprietary version
--include vendor/cmdc/taco/BoardConfigVendor.mk
+-include vendor/yu/YUREKA2/BoardConfigVendor.mk

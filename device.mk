@@ -17,8 +17,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-$(call inherit-product, vendor/cmdc/msm8953-common/msm8953-common-vendor.mk)
-$(call inherit-product, vendor/cmdc/taco/taco-vendor.mk)
+$(call inherit-product, vendor/yu/msm8953-common/msm8953-common-vendor.mk)
+$(call inherit-product, vendor/yu/YUREKA2/YUREKA2-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \

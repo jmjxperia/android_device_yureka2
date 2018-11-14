@@ -14,18 +14,18 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/cmdc/taco/full_taco.mk)
+$(call inherit-product, device/yu/YUREKA2/full_YUREKA2.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_taco
-BOARD_VENDOR := CMCC
+PRODUCT_NAME := lineage_YUREKA2
+BOARD_VENDOR := YU
 
 PRODUCT_GMS_CLIENTID_BASE := android-micromax
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=taco \
+    PRODUCT_NAME=YUREKA2 \
     PRIVATE_BUILD_DESC="wt89536-user 6.0.1 MMB29M eng.zhouchao.20170723.172948 release-keys"
 
 BUILD_FINGERPRINT := YU/YUREKA2/YUREKA2:6.0.1/MMB29M/01112051:user/release-keys
