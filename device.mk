@@ -232,6 +232,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
+	
+# Widevine
+PRODUCT_PACKAGES += \
+android.hardware.drm@1.0-service.widevine
 
 # IRQ
 PRODUCT_COPY_FILES += \
