@@ -388,6 +388,10 @@ PRODUCT_PACKAGES += \
 # VNDK-SP:
 PRODUCT_PACKAGES += \
     vndk-sp
+	
+# Doze mode
+PRODUCT_PACKAGES += \
+    YUDoze
 
 # Vibrator
 PRODUCT_PACKAGES += \
