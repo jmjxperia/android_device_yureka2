@@ -144,6 +144,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
 
+# Camera shim
+PRODUCT_PACKAGES += \
+    libshims_qcamera-daemon
+	
 # IR
 PRODUCT_PACKAGES += \
 
