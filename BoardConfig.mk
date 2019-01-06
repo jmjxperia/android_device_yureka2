@@ -132,6 +132,9 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := /vendor/bin/mm-qcamera-daemon|libshims_qcamera-daemon.so
+
 # Filesystem
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true

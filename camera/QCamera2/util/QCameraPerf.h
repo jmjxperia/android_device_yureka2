@@ -74,6 +74,7 @@ public:
     bool    isTimerReset();
     void    powerHintInternal(PowerHint hint, bool enable);
     void    powerHint(PowerHint hint, bool enable);
+    bool    isPerfLockTimedAcquired() { return (0 <= mPerfLockHandleTimed); }
 
 private:
     int32_t        (*perf_lock_acq)(int, int, int[], int);
