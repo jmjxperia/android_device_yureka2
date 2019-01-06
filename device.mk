@@ -159,7 +159,7 @@ PRODUCT_PACKAGES += \
 # Doze mode
 PRODUCT_PACKAGES += \
     YUDoze \
-    XiaomiParts
+    YUParts
 
 # DRM
 PRODUCT_PACKAGES += \

@@ -11,7 +11,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v4
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
-LOCAL_PACKAGE_NAME := XiaomiParts
+LOCAL_PACKAGE_NAME := YUParts
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
@@ -19,9 +19,9 @@ LOCAL_USE_AAPT2 := true
 
 package_resource_overlays := $(strip \
     $(wildcard $(foreach dir, $(PRODUCT_PACKAGE_OVERLAYS), \
-      $(addprefix $(dir)/, packages/apps/XiaomiParts/res))) \
+      $(addprefix $(dir)/, packages/apps/YUParts/res))) \
     $(wildcard $(foreach dir, $(DEVICE_PACKAGE_OVERLAYS), \
-      $(addprefix $(dir)/, packages/apps/XiaomiParts/res))))
+      $(addprefix $(dir)/, packages/apps/YUParts/res))))
 
 LOCAL_RESOURCE_DIR := $(package_resource_overlays) $(LOCAL_RESOURCE_DIR)
 
