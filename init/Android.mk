@@ -21,9 +21,9 @@ include $(CLEAR_VARS)
 LOCAL_C_INCLUDES := \
     system/core/base/include \
     system/core/init
-LOCAL_MODULE := libinit_mido
+LOCAL_MODULE := libinit_YUREKA2
 LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := init_mido.cpp
+LOCAL_SRC_FILES := init_YUREKA2.cpp
 LOCAL_STATIC_LIBRARIES := libbase libselinux
 
 include $(BUILD_STATIC_LIBRARY)

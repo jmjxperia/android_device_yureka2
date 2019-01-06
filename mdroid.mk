@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,18 +14,21 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/xiaomi/mido/full_mido.mk)
+$(call inherit-product, device/yu/YUREKA2/full_YUREKA2.mk)
 
 # Inherit some common MDroid stuff.
 $(call inherit-product, vendor/mdroid/config/common_full_phone.mk)
 
-PRODUCT_NAME := mdroid_mido
-BOARD_VENDOR := Xiaomi
+PRODUCT_NAME := mdroid_YUREKA2
+BOARD_VENDOR := YU
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+# Vendor security patch level
+VENDOR_SECURITY_PATCH := 2018-09-01
+
+PRODUCT_GMS_CLIENTID_BASE := android-micromax
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="mido-user 7.0 NRD90M V9.6.1.0.NCFMIFD release-keys"
+    PRODUCT_NAME=YUREKA2 \
+    PRIVATE_BUILD_DESC="wt89536-user 6.0.1 MMB29M eng.zhouchao.20170723.172948 release-keys"
 
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "xiaomi/mido/mido:7.0/NRD90M/V9.6.1.0.NCFMIFD:user/release-keys"
+BUILD_FINGERPRINT := YU/YUREKA2/YUREKA2:6.0.1/MMB29M/01112051:user/release-keys

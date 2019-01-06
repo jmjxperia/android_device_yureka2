@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mido device
-$(call inherit-product, device/xiaomi/mido/device.mk)
+# Inherit from YUREKA2 device
+$(call inherit-product, device/yu/YUREKA2/device.mk)
 
 # Device identifier. This must come after all inclusions
-TARGET_VENDOR := Xiaomi
-PRODUCT_DEVICE := mido
-PRODUCT_NAME := full_mido
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi Note 4
-PRODUCT_MANUFACTURER := Xiaomi
+TARGET_VENDOR := YU
+PRODUCT_DEVICE := YUREKA2
+PRODUCT_NAME := full_YUREKA2
+PRODUCT_BRAND := YU
+PRODUCT_MODEL := YU5551
+PRODUCT_MANUFACTURER := YU

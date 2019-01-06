@@ -18,8 +18,8 @@
 
 set -e
 
-export DEVICE=mido
-export VENDOR=xiaomi
+export DEVICE=YUREKA2
+export VENDOR=yu
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

@@ -1,5 +1,5 @@
 #
-# system.prop for mido
+# system.prop for YUREKA2
 #
 
 # ART
@@ -67,6 +67,10 @@ vidc.enc.dcvs.extra-buff-count=2
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.cne.feature=1 \
 persist.dpm.feature=1
+
+# Fast charing
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.usb.hvdcp.detect=true
 
 # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -210,4 +214,4 @@ ro.max.fling_velocity=20000
 
 # Device hostname
 PRODUCT_PROPERTY_OVERRIDES += \
-net.hostname=RedmiNote4
+net.hostname=Yureka2
