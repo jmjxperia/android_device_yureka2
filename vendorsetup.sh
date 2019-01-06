@@ -1,0 +1,1 @@
+add_lunch_combo mdroid_YUREKA2-userdebug
