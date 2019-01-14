@@ -319,7 +319,7 @@
         <item>"/system/framework/arm64/boot-core-libart.vdex"</item>
     </string-array>
 
-<<<<<<< HEAD
+
     <!-- Should the pinner service pin the Camera application? -->
     <bool name="config_pinnerCameraApp">true</bool>
 
@@ -341,7 +341,7 @@
          * The remote submix module "audio.r_submix.default" must be installed on the device.
          * The device must be provisioned with HDCP keys (for protected content). -->
     <bool name="config_enableWifiDisplay">true</bool>
-=======
+
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
         <item>10</item>
@@ -349,5 +349,5 @@
 
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_enableSmartPixels">true</bool>
->>>>>>> e4fd4bb... lettuce: overlay: Enable Smart Pixels
+
 </resources>
