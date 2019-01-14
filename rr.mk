@@ -16,10 +16,10 @@
 
 $(call inherit-product, device/yu/YUREKA2/full_YUREKA2.mk)
 
-# Inherit some common MDroid stuff.
-$(call inherit-product, vendor/mdroid/config/common_full_phone.mk)
+# Inherit some common RR stuff.
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
-PRODUCT_NAME := mdroid_YUREKA2
+PRODUCT_NAME := rr_YUREKA2
 BOARD_VENDOR := YU
 
 # Vendor security patch level
