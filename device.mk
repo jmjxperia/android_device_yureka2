@@ -159,8 +159,7 @@ PRODUCT_PACKAGES += \
 
 # Doze mode
 PRODUCT_PACKAGES += \
-    YUDoze \
-    YUParts
+    YUDoze
 
 # DRM
 PRODUCT_PACKAGES += \
