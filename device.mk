@@ -315,10 +315,12 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.target.rc \
+	init.spectrum.rc \
     ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh \
+	init.spectrum.sh \
     init.qcom.post_boot.sh
 
 # RenderScript HAL
