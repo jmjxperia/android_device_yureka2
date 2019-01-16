@@ -23,7 +23,8 @@ PRODUCT_NAME := rr_YUREKA2
 BOARD_VENDOR := YU
 
 # Vendor security patch level
-VENDOR_SECURITY_PATCH := 2018-09-01
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2018-09-01
 
 PRODUCT_GMS_CLIENTID_BASE := android-micromax
 
