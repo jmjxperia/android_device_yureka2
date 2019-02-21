@@ -297,7 +297,6 @@ on property:persist.vendor.radio.atfwd.start=false
 on property:vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
-
 # FrancoKernel - start
     
     # according to Qcom this legacy value improves first launch latencies
@@ -349,6 +348,9 @@ on property:init.svc.qcom-post-boot=stopped
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
+
+on property:vendor.media.target.version=*
+    setprop vendor.sys.media.target.version ${vendor.media.target.version}
 
 on property:vold.decrypt=trigger_restart_framework
     restart vendor.camera-provider-2-4
