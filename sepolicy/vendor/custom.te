@@ -167,3 +167,9 @@ allow bootstat mm-qcamerad_exec:file getattr;
 
 #===========shell==========================
 allow shell mm-qcamerad_exec:file getattr;
+
+#===========cameraserver====================
+allow cameraserver mediacodec:binder call;
+
+#===========sensors========================
+allow sensors sensors:capability { sys_admin dac_override dac_read_search };

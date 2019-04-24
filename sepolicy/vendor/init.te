@@ -19,3 +19,5 @@ allow init vendor_file:file execute;
 
 allow init su:process { transition rlimitinh };
 allow init vendor_file:file execute_no_trans;
+
+allow init su:process { siginh noatsecure };

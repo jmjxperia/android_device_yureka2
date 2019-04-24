@@ -17,7 +17,7 @@ allow hal_fingerprint_mido fpc_data_file:dir rw_dir_perms;
 allow hal_fingerprint_mido fpc_data_file:sock_file create_file_perms;
 allow hal_fingerprint_mido storage_file:dir search;
 allow hal_fingerprint_mido servicemanager:binder { transfer call };
-allow hal_fingerprint_mido fingerprintd_data_file:dir write;
+allow hal_fingerprint_mido fingerprintd_data_file:dir { search write };
 set_prop(hal_fingerprint_mido, system_prop)
 r_dir_file(hal_fingerprint_mido, firmware_file)
 
