@@ -440,7 +440,8 @@ PRODUCT_PACKAGES += \
 
 # VNDK-SP
 PRODUCT_PACKAGES += \
-    vndk-sp
+    vndk_package \
+    libstdc++.vendor
 
 # Wifi
 PRODUCT_PACKAGES += \
