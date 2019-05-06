@@ -37,7 +37,7 @@
 // Camera dependencies
 #include "camera.h"
 #include "HAL/QCamera2HWI.h"
-#include "HAL/QCameraMuxer.h"
+#include "QCameraMuxer.h"
 
 #include "hardware/camera3.h"
 #include "HAL3/QCamera3HWI.h"
