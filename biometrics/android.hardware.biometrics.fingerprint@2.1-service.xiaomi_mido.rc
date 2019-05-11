@@ -34,20 +34,22 @@ on boot
     chmod 0660 /sys/devices/soc/soc:fpc1020/hw_reset
     chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
     chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
-    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
-    chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
+    chown system system /sys/devices/soc/soc:fpc1020/spi_prepare
+    chmod 0660 /sys/devices/soc/soc:fpc1020/spi_prepare
 
-on property:sys.fp.vendor=switchf
-    stop vendor.gx_fpd
-    setprop sys.fp.vendor searchf
-    setprop fpc.fp.miui.token 0
+# fpc fingerprint section - start
+on property:persist.sys.fp.vendor=switchf
+    vendor.gx_fpd
+    setprop persist.sys.fp.vendor searchf
+    setprop persist.sys.fp.goodix 0
     setprop ro.boot.fpsensor fpc
-    setprop ro.hardware.fingerprint searchf
+    setprop ro.hardware.fingerprint fpc
     start vendor.fps_hal
 
-on property:sys.fp.onstart=1
-   setprop goodix.fp.miui.analyse 1
-   setprop goodix.fp.miui.token 0
-   setprop ro.boot.fpsensor gdx
-   setprop ro.hardware.fingerprint goodix
-   start vendor.fps_hal
+# goodix fingerprint section - start
+on property:persist.sys.fp.vendor=goodix
+    setprop persist.sys.fp.goodix 1
+    setprop ro.boot.fpsensor gdx
+    setprop ro.hardware.fingerprint goodix 
+    start vendor.fps_hal
+# goodix fingerprint section - end
