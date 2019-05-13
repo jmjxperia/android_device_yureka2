@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_YUREKA2.mk
+    $(LOCAL_DIR)/rr_YUREKA2.mk
