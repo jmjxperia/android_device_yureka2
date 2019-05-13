@@ -39,7 +39,7 @@ on boot
 
 # fpc fingerprint section - start
 on property:persist.sys.fp.vendor=switchf
-    vendor.gx_fpd
+    stop vendor.gx_fpd
     setprop persist.sys.fp.vendor searchf
     setprop persist.sys.fp.goodix 0
     setprop ro.boot.fpsensor fpc
@@ -53,3 +53,6 @@ on property:persist.sys.fp.vendor=goodix
     setprop ro.hardware.fingerprint goodix 
     start vendor.fps_hal
 # goodix fingerprint section - end
+
+   setprop persist.sys.fp.vendor none
+	start vendor.gx_fpd
