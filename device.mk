@@ -89,7 +89,6 @@ PRODUCT_PACKAGES += \
 
 #Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
     audio.primary.msm8953 \
     audio_amplifier.msm8953 \
     audio.r_submix.default \
@@ -178,6 +177,12 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.1-service.clearkey
+
+# A2DP
+PRODUCT_PACKAGES += \
+  audio.a2dp.default \
+  android.hardware.bluetooth.a2dp@1.0-impl \
+  android.hardware.bluetooth.a2dp@1.0-service \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
