@@ -563,6 +563,6 @@ service power_off_alarm /vendor/bin/power_off_alarm
     oneshot
 
 service goodix_script /vendor/bin/init.goodix.sh
- class late_start
- user system
- oneshot
+    class late_start
+    user system
+    oneshot

@@ -1,4 +1,5 @@
 type init_fingerprint, domain;
+typeattribute init_fingerprint data_between_core_and_vendor_violators;
 type init_fingerprint_exec, exec_type, vendor_file_type, file_type;
 
 # Allow for transition from init domain to init_fingerprint
@@ -9,9 +10,11 @@ allow init_fingerprint vendor_shell_exec:file rx_file_perms;
 allow init_fingerprint vendor_toolbox_exec:file rx_file_perms;
 
 # Allow to delete file
-allow init_fingerprint persist_file:dir search;
-allow init_fingerprint persist_drm_file:dir { read search open write remove_name };
-allow init_fingerprint persist_drm_file:file { getattr unlink };
-
-typeattribute init_fingerprint data_between_core_and_vendor_violators;
+allow init_fingerprint self:capability chown;
 allow init_fingerprint system_data_file:file r_file_perms;
+allow init_fingerprint mnt_vendor_file:dir search;
+allow init_fingerprint persist_drm_file:dir create_file_perms; 
+
+# Allow to delete/create/unlink file
+allow init_fingerprint { persist_file persist_drm_file mnt_vendor_file gx_fpd_data_file }:dir create_dir_perms;
+allow init_fingerprint { persist_file persist_drm_file mnt_vendor_file gx_fpd_data_file }:file create_file_perms;
