@@ -179,3 +179,6 @@ allow hostapd hal_wifi_hostapd_default:unix_dgram_socket sendto;
 
 #===========hal_wifi_hostapd_default=======
 allow hal_wifi_hostapd_default hostapd:unix_dgram_socket sendto;
+
+#==========time_daemon=====================
+allow time_daemon time_daemon:capability { setgid setuid };
