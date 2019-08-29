@@ -35,7 +35,7 @@ PRODUCT_DEVICE := YUREKA2
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2018-12-12
+    ro.lineage.build.vendor_security_patch=2019-07-01
 
 PRODUCT_GMS_CLIENTID_BASE := android-micromax
 
