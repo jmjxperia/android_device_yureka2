@@ -4,3 +4,6 @@ allow mm-qcamerad camera_socket:sock_file { create unlink };
 allow mm-qcamerad camera_data_file:file { read write getattr };
 
 allow mm-qcamerad system_server:unix_stream_socket { write read };
+
+allow mm-qcamerad persist_sensors_file:file rw_file_perms;
+
