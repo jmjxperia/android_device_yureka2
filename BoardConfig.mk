@@ -229,7 +229,6 @@ TARGET_USES_OLD_MNC_FORMAT := true
 
 # QCOM support
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_USE_SDCLANG := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
