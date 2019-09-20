@@ -29,7 +29,7 @@ namespace implementation {
 GloveMode::GloveMode() {
 }
 
-constexpr const char kControlPath[] = "/sys/class/tp_glove/device/glove_enable";
+constexpr const char kControlPath[] = "/proc/touchscreen_feature/glove_onoff";
 
 // Methods from ::vendor::lineage::touch::V1_0::IGloveMode follow.
 Return<bool> GloveMode::isEnabled() {
