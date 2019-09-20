@@ -1,16 +1,9 @@
-#============= dataservice_app ==============
-allow dataservice_app runtime_event_log_tags_file:file { open read };
-
 #============= dex2oat ==============
-allow dex2oat runtime_event_log_tags_file:file { open read };
 allow dex2oat mm-qcamerad_exec:file getattr;
 
 #============= hal_audio_default ==============
 allow hal_audio_default sysfs:dir { open read };
 allow hal_audio_default i2c_device:chr_file { ioctl read write open };
-
-#============= hal_power_default ==============
-allow hal_power_default default_android_hwservice:hwservice_manager add;
 
 #============= hal_wifi_default ==============
 allow hal_wifi_default kernel:system module_request;
@@ -20,12 +13,10 @@ allow hal_wifi_supplicant_default hal_wifi_supplicant_default:capability sys_adm
 #============= init ==============
 allow init adbd:process noatsecure;
 allow init bootstat:process noatsecure;
-allow init default_android_hwservice:hwservice_manager add;
 allow init fsck:process noatsecure;
 allow init gatekeeperd:process noatsecure;
 allow init hal_fingerprint_mido:process noatsecure;
 allow init hal_keymaster_default:process noatsecure;
-allow init hal_usb_hwservice:hwservice_manager add;
 allow init hal_wifi_supplicant_default:process noatsecure;
 allow init hidl_base_hwservice:hwservice_manager add;
 allow init kernel:system module_request;
@@ -34,9 +25,7 @@ allow init netd:process noatsecure;
 allow init perfprofd:process noatsecure;
 allow init qti_init_shell:process noatsecure;
 allow init servicemanager:process noatsecure;
-allow init sysfs:dir write;
 allow init sysfs:file setattr;
-allow init system_file:file execute_no_trans;
 allow init system_server:binder call;
 allow init tombstoned:process noatsecure;
 allow init tzdatacheck:process noatsecure;
@@ -60,8 +49,6 @@ allow location kernel:system module_request;
 #============= mediaprovider ==============
 allow mediaprovider bg_boot_complete_prop:file read;
 allow mediaprovider bg_daemon_prop:file read;
-allow mediaprovider bluetooth_prop:file read;
-allow mediaprovider bootloader_boot_reason_prop:file read;
 allow mediaprovider boottime_prop:file read;
 
 #============= mm-qcamerad ==============
@@ -71,21 +58,14 @@ allow mm-qcamerad sysfs:file read;
 allow netmgrd kernel:system module_request;
 allow netmgrd netutils_wrapper:process noatsecure;
 
-#============= qti_init_shell ==============
-allow qti_init_shell sysfs_devices_system_cpu:dir write;
-
 #============= radio ==============
 allow radio bg_boot_complete_prop:file read;
 allow radio bg_daemon_prop:file read;
-allow radio bluetooth_prop:file read;
-allow radio bootloader_boot_reason_prop:file read;
 allow radio boottime_prop:file read;
 
 #============= shared_relro ==============
 allow shared_relro bg_boot_complete_prop:file read;
 allow shared_relro bg_daemon_prop:file read;
-allow shared_relro bluetooth_prop:file read;
-allow shared_relro bootloader_boot_reason_prop:file read;
 allow shared_relro boottime_prop:file read;
 
 #============= system_server ==============
@@ -98,7 +78,6 @@ allow system_server cnd_vendor_prop:file read;
 allow system_server console_silent_prop:file read;
 allow system_server ctl_LKCore_prop:file read;
 allow system_server ctl_bootanim_prop:file read;
-allow system_server init:binder { call transfer };
 
 #============= vendor_init ==============
 allow vendor_init media_rw_data_file:file { getattr relabelfrom };
@@ -109,13 +88,11 @@ allow vold vold_prepare_subdirs:process noatsecure;
 
 #============= wcnss_service ==============
 allow wcnss_service wifi_prop:property_service set;
-allow wcnss_service serialno_prop:file read;
 
 #============= webview_zygote ==============
 allow webview_zygote theme_data_file:file { getattr open read };
 
 #=============netutils_wrapper=============
-allow netutils_wrapper netutils_wrapper:capability sys_admin;
 allow netutils_wrapper mm-qcamerad_exec:file getattr;
 
 #=============dpmd=========================
@@ -172,7 +149,7 @@ allow shell mm-qcamerad_exec:file getattr;
 allow cameraserver mediacodec:binder call;
 
 #===========sensors========================
-allow sensors sensors:capability { sys_admin dac_override dac_read_search fowner };
+allow sensors sensors:capability { sys_admin fowner };
 
 #===========hostapd========================
 allow hostapd hal_wifi_hostapd_default:unix_dgram_socket sendto;

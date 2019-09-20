@@ -1,12 +1,6 @@
 allow mm-qcamerad camera_socket:dir rw_dir_perms;
 allow mm-qcamerad camera_socket:sock_file { create unlink };
 
-allow mm-qcamerad binder_device:chr_file { open read write ioctl };
-allow mm-qcamerad camera_data_file:sock_file { create unlink };
-allow mm-qcamerad camera_data_file:dir { add_name remove_name write search };
-allow mm-qcamerad camera_data_file:file { create read open write getattr };
+allow mm-qcamerad camera_data_file:file { read write getattr };
 
 allow mm-qcamerad system_server:unix_stream_socket { write read };
-allow mm-qcamerad servicemanager:binder call;
-
-allow mm-qcamerad sensorservice_service:service_manager find;
