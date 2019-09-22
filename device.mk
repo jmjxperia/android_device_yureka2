@@ -237,6 +237,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
+# HW crypto
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.goodix.sh \
@@ -254,10 +258,6 @@ PRODUCT_PACKAGES += \
 	move_time_data.sh \
 	move_wifi_data.sh \
     ueventd.qcom.rc
-
-# HW crypto
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.cryptfshw@1.0-service-ioctl-qti
 
 # Keylayout
 PRODUCT_COPY_FILES += \
