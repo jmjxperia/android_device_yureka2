@@ -89,10 +89,8 @@ allow vold vold_prepare_subdirs:process noatsecure;
 #============= wcnss_service ==============
 allow wcnss_service wifi_prop:property_service set;
 
-#============= webview_zygote ==============
-allow webview_zygote theme_data_file:file { getattr open read };
-
 #=============netutils_wrapper=============
+dontaudit netutils_wrapper { netutils_wrapper netutils_wrapper }:capability sys_admin;
 allow netutils_wrapper mm-qcamerad_exec:file getattr;
 
 #=============dpmd=========================
@@ -159,3 +157,6 @@ allow hal_wifi_hostapd_default hostapd:unix_dgram_socket sendto;
 
 #==========time_daemon=====================
 allow time_daemon time_daemon:capability { setgid setuid };
+
+#==========wcnss_service=============
+dontaudit wcnss_service { wcnss_service serialno_prop }:file { read open getattr };
