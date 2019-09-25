@@ -147,7 +147,7 @@ allow shell mm-qcamerad_exec:file getattr;
 allow cameraserver mediacodec:binder call;
 
 #===========sensors========================
-allow sensors sensors:capability { sys_admin fowner };
+allow sensors sensors:capability { sys_admin dac_override dac_read_search fowner };
 
 #===========hostapd========================
 allow hostapd hal_wifi_hostapd_default:unix_dgram_socket sendto;

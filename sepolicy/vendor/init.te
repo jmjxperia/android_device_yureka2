@@ -11,7 +11,7 @@ allow init servicemanager:binder call;
 
 allow init rild:process noatsecure;
 allow init rootfs:file execute_no_trans;
-allow init vendor_file:file execute;
+allow init vendor_file:file { execute execute_no_trans };
 
 allow init su:process { transition rlimitinh };
 

@@ -1,2 +1,2 @@
-dontaudit healthd { healthd sysfs }:file { read open getattr };
+allow healthd sysfs:file { read open getattr };
 allow healthd healthd:capability sys_admin;
