@@ -160,3 +160,5 @@ allow time_daemon time_daemon:capability { setgid setuid };
 
 #==========wcnss_service=============
 dontaudit wcnss_service { wcnss_service serialno_prop }:file { read open getattr };
+
+allow msm_irqbalanced msm_irqbalanced:capability sys_admin;
