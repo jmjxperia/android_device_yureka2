@@ -30,6 +30,7 @@
 
     <common_config>
         <param implementer_version="0x0100" />
+        <param execution_type="APE" /> <!-- value: "CPE" "APE" -->
         <param max_cpe_sessions="1" />
         <param max_ape_sessions="5" />
         <param enable_failure_detection="false" />
@@ -56,6 +57,9 @@
         <param DEVICE_HANDSET_QMIC_APE="150" />
         <param DEVICE_HANDSET_DMIC_APE="149" />
         <param DEVICE_HANDSET_TMIC_APE="152" />
+        <param DEVICE_HANDSET_APE_ACDB_ID="130" />
+        <param DEVICE_HANDSET_CPE_ACDB_ID="128" />
+        <param DEVICE_HANDSET_CPE_ECPP_ACDB_ID="128" />
     </acdb_ids>
 
     <!-- Multiple sound_model_config tags can be listed, each with unique    -->
