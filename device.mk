@@ -336,12 +336,6 @@ PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     libandroid_net 
 
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    libebtc
-
 # QMI
 PRODUCT_PACKAGES += \
     libjson
