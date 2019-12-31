@@ -303,13 +303,6 @@ on post-fs-data
 
     #Create FTM_AP dir for factory test
     mkdir /data/FTM_AP 0775 system system
- 
-service fm_dl /vendor/bin/init.qti.fm.sh
-    class late_start
-    user system
-    group system
-    disabled
-    oneshot
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "

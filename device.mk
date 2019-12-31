@@ -244,7 +244,6 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
-    init.qti.fm.sh \
     init.qti.ims.sh \
     fstab.qcom \
     init.qcom.rc \
