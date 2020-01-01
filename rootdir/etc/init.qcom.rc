@@ -521,8 +521,10 @@ on charger
 
 service time_daemon /system/vendor/bin/time_daemon
     class main
-    user root
-    group root
+    user system
+    group system
+    capabilities SYS_TIME
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.move_time_data /system/bin/move_time_data.sh
     class main
