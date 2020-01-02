@@ -3,3 +3,10 @@ allow system_app sysfs_zram:file { read open getattr };
 allow system_app proc_pagetypeinfo:file { read open getattr };
 
 allow system_app vendor_file:file { read open execute getattr };
+
+# FM radio needs to set fm properties
+set_prop(system_app, fm_prop)
+
+# zram
+r_dir_file(system_app sysfs_zram)
+
