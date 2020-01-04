@@ -93,6 +93,10 @@ vendor.display.disable_skip_validate=1 \
 vendor.gralloc.enable_fb_ubwc=1
 sdm.debug.rotator_downscale=1 \
 
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.dpm.feature=0
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
