@@ -481,14 +481,6 @@ on charger
     load_system_props
     start qcom-post-boot
 
-
-service time_daemon /system/vendor/bin/time_daemon
-    class main
-    user system
-    group system
-    capabilities SYS_TIME
-    writepid /dev/cpuset/system-background/tasks
-
 service vendor.move_time_data /system/bin/move_time_data.sh
     class main
     user system
