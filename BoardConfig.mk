@@ -226,6 +226,9 @@ TARGET_HAS_NO_WLAN_STATS := true
 # QCOM support
 BOARD_USES_QCOM_HARDWARE := true
 
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
