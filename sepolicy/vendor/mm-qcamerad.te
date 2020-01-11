@@ -15,5 +15,3 @@ allow mm-qcamerad servicemanager:binder { call };
 allow mm-qcamerad sensorservice_service:service_manager { find };
 allow mm-qcamerad binder_device:chr_file { ioctl read write open };
 
-r_dir_file(mm-qcamerad, sysfs_kgsl)
-
