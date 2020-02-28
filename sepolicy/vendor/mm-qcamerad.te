@@ -14,4 +14,3 @@ allow mm-qcamerad camera_data_file:sock_file { create unlink };
 allow mm-qcamerad servicemanager:binder { call };
 allow mm-qcamerad sensorservice_service:service_manager { find };
 allow mm-qcamerad binder_device:chr_file { ioctl read write open };
-
