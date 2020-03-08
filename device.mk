@@ -34,7 +34,8 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/yu/YUREKA2
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # Permissions
 PRODUCT_COPY_FILES += \
