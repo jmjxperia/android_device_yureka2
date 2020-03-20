@@ -818,7 +818,6 @@ lib/libactuator_lc898212xd.so
 lib/libactuator_rohm_bu64243gwz.so 
 
 # Camera chromatix
-# Camera chromatix
 lib/libchromatix_ov16880_common.so
 lib/libchromatix_ov16880_cpp_hfr_120.so
 lib/libchromatix_ov16880_cpp_hfr_60.so
@@ -941,8 +940,3 @@ lib64/libfp_client.so
 lib64/libfpnav.so
 lib64/libfpservice.so
 
-# HVDCP
-bin/hvdcp_opti
-
-# FM Patch
-bin/fm_qsoc_patches
