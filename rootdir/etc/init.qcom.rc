@@ -32,7 +32,7 @@ import /vendor/etc/init/hw/init.spectrum.rc
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
-	chown root system /dev/kmsg
+    chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
 
 on init
@@ -111,7 +111,7 @@ on boot
     chown system system /sys/kernel/debug/msm_core/enable
     chown system system /sys/kernel/debug/msm_core/ptable
     chown system system /sys/kernel/boot_slpi/ssr
-	 chown system system /sys/kernel/boot_adsp/ssr
+    chown system system /sys/kernel/boot_adsp/ssr
     chmod 0660 /sys/module/bluetooth_power/parameters/power
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
     chmod 0660 /sys/module/radio_iris_transport/parameters/fmsmd_set
@@ -124,11 +124,11 @@ on boot
 
     mkdir /mnt/vendor/persist/drm 0770 system system
     mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
-	 mkdir /persist/misc 0770 system system
+    mkdir /persist/misc 0770 system system
     mkdir /mnt/vendor/persist/misc 0770 system system
     mkdir /mnt/vendor/persist/alarm 0770 system system
     mkdir /mnt/vendor/persist/time 0770 system system
-	 mkdir /mnt/vendor/persist/secnvm 0770 system system
+    mkdir /mnt/vendor/persist/secnvm 0770 system system
     restorecon_recursive /mnt/vendor/persist
 
     # To prevent out of order acknowledgements from making
@@ -233,7 +233,7 @@ on post-fs-data
     # Create directory for modem_config
     mkdir /data/vendor/modem_config 0570 radio root
 
-	chown system system /persist/WCNSS_qcom_wlan_nv.bin
+    chown system system /persist/WCNSS_qcom_wlan_nv.bin
 
     #Create directories for Location services
     mkdir /data/vendor/location 0770 gps gps
@@ -367,12 +367,12 @@ service vendor.rmt_storage /vendor/bin/rmt_storage
     user root
     shutdown critical
     ioprio rt 0
-	writepid /dev/cpuset/system-background/tasks
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.tftp_server /vendor/bin/tftp_server
-   class core
-   user root
-   writepid /dev/cpuset/system-background/tasks
+    class core
+    user root
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.dataqti /vendor/bin/qti
     class main
@@ -389,7 +389,7 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user root
     group root
-	writepid /dev/cpuset/system-background/tasks
+    writepid /dev/cpuset/system-background/tasks
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
@@ -419,7 +419,7 @@ service vendor.move_wifi_data /system/bin/move_wifi_data.sh
     user  wifi
     group wifi
     disabled
-	oneshot
+    oneshot
 
 service loc_launcher /vendor/bin/loc_launcher
     class late_start
@@ -499,7 +499,7 @@ service vendor.move_time_data /system/bin/move_time_data.sh
     user system
     group system
     disabled
-	oneshot
+    oneshot
 
 service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     override
@@ -516,7 +516,7 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     oneshot
     interface android.hardware.audio@5.0::IDevicesFactory default
     interface android.hardware.audio@4.0::IDevicesFactory default
-	interface android.hardware.audio@2.0::IDevicesFactory default
+    interface android.hardware.audio@2.0::IDevicesFactory default
 
 service power_off_alarm /vendor/bin/power_off_alarm
     class core
