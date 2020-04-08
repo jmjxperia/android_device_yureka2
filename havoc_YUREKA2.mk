@@ -18,8 +18,8 @@
 # Inherit from YUREKA2 device
 $(call inherit-product, device/yu/YUREKA2/full_YUREKA2.mk)
 
-# Inherit some common AEX stuff.
-$(call inherit-product, vendor/havoc/config/common.mk)
+# Inherit some common havoc stuff.
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -44,7 +44,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="wt89536-user 6.0.1 MMB29M eng.zhouchao.20170723.172948 release-keys"
 
 BUILD_FINGERPRINT := YU/YUREKA2/YUREKA2:6.0.1/MMB29M/01112051:user/release-keys
-
-#Official Havoc
-export export
-HAVOC_BUILD_TYPE=Official
