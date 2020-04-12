@@ -37,6 +37,7 @@
 #include <fcntl.h>
 #include <poll.h>
 #include <cam_semaphore.h>
+#include <unistd.h>
 
 #include "mm_camera_dbg.h"
 #include "mm_camera_interface.h"
