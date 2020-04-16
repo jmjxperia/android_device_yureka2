@@ -33,10 +33,6 @@ PRODUCT_NAME := ancient_YUREKA2
 BOARD_VENDOR := YU
 PRODUCT_DEVICE := YUREKA2
 
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2019-07-01
-
 PRODUCT_GMS_CLIENTID_BASE := android-micromax
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
