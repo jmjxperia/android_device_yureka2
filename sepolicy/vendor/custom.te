@@ -1,5 +1,6 @@
 #============= hal_audio_default ==============
 allow hal_audio_default sysfs:dir r_dir_perms;
+allow hal_audio_default device:chr_file { ioctl read write open };
 
 #============= hal_wifi_default ==============
 allow hal_wifi_default kernel:system module_request;
