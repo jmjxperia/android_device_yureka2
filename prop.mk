@@ -223,10 +223,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ro.min.fling_velocity=160 \
 ro.max.fling_velocity=20000
 
-#Maintainer P
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.havoc.maintainer=jmjxperia
-
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
 dalvik.vm.dex2oat-filter=speed \
