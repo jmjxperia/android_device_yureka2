@@ -297,10 +297,6 @@ on property:vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
 # FrancoKernel - start
-    
-    # according to Qcom this legacy value improves first launch latencies
-    # stock value is 512k
-    setprop dalvik.vm.heapminfree 2m
 
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
