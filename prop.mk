@@ -244,3 +244,23 @@ ro.config.hw_power_saving=1 \
 ro.config.hw_fast_dormancy=1 \
 ro.config.hw_quickpoweron=true \
 persist.sys.use_dithering=0
+
+# Improve touch detection
+PRODUCT_PROPERTY_OVERRIDES += \
+touch.pressure.scale=0.001 \
+persist.sys.ui.hw=1 \
+view.scroll_friction=10 \
+touch.size.calibration=diameter \
+touch.size.scale=1 \
+touch.size.bias=0 \
+touch.size.isSummed=0 \
+touch.pressure.scale=0.001 \
+touch.orientation.calibration=none \
+touch.distance.calibration=none \
+touch.distance.scale=0 \
+touch.coverage.calibration=box \
+touch.gestureMode=spots \
+MultitouchSettleInterval=1ms \
+MultitouchMinDistance=1px \
+TapInterval=1ms \
+TapSlop=1px
