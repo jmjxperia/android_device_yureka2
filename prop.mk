@@ -207,7 +207,7 @@ net.tcp.2g_init_rwnd=10
 
 # UI
 PRODUCT_PROPERTY_OVERRIDES += \
-sys.use_fifo_ui=0
+sys.use_fifo_ui=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
