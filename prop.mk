@@ -246,3 +246,7 @@ ro.config.hw_power_saving=1 \
 ro.config.hw_fast_dormancy=1 \
 ro.config.hw_quickpoweron=true \
 persist.sys.use_dithering=0
+
+# Zygote preforking
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.device_config.runtime_native.usap_pool_enabled=true
