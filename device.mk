@@ -141,7 +141,8 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbt-vendor
+    libbt-vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Bluetooth
 PRODUCT_PACKAGES += \
