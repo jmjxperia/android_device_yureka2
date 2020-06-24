@@ -66,6 +66,11 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|b965b1786fa4bffaf08a4
 vendor/lib64/libbtnv.so|143ba8a42154a26469b87243ae3e1cd5e9565b13
 vendor/lib64/libbt-hidlclient.so|69414712e85c8fabf9be9c697f0eaba470ab70eb
 
+# Audiosphere - from LA.UM.8.6.r1-04400-89xx.0
+etc/permissions/audiosphere.xml|3c6d8f14bd99e52a424282fd5d0a5b9b06485dea
+framework/audiosphere.jar|c1679f5aca56f0cb24745b3f7d219acd04833bed
+vendor/lib/soundfx/libasphere.so|4d0ccf1c282bb70619d20bf7d79021dc3815a579
+
 # Bluetooth (Audio) - from LA.UM.8.6.r1-02600-89xx.0
 vendor/lib64/hw/audio.bluetooth_qti.default.so|a17474dec03b704cc9741c85f2f6aef62c5ad71e
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|5198abab737272b2f6fdf2cb383d07a8e975d9ac
