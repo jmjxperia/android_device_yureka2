@@ -1010,6 +1010,7 @@ etc/qdcm_calib_data_otm1901a_1080p_video_DJ_otp.xml
 etc/qdcm_calib_data_r63350_1080p_video_Tianma.xml
 
 # Fingerprint
+<<<<<<< HEAD
 vendor/bin/gx_fpd|2467b30465fe3b1c6a376d50183927dcdcd732c9
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_mido|461a86bdb766866c2d275c714848e273bef5a36d
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_mido.rc|8a327bd04952116d2119373fb4f478ba7120e7d7
@@ -1024,3 +1025,15 @@ vendor/lib64/libfpservice.so|7ca47dfa5e8be7c502f1ca3431ee2a46d38e1f43
 # VNDK
 vendor/lib/vndk-sp/libcutils.so|846d5769b71abca5b8fa185d4cf83a5cf1afed3c
 vendor/lib/vndk/libprocessgroup.so|62743ee7f648f0f742c35c9fbd7299186e91967a
+=======
+bin/gx_fpd:vendor/bin/gx_fpd 
+lib/libcom_fingerprints_service.so
+lib/hw/fingerprint.fpc.so
+lib64/hw/fingerprint.fpc.so 
+lib64/hw/fingerprint.goodix.so
+lib64/hw/gxfingerprint.default.so
+lib64/libcom_fingerprints_service.so
+lib64/libfp_client.so
+lib64/libfpnav.so
+lib64/libfpservice.so
+>>>>>>> parent of 9d115f172... YUREKA2: biometrics: use prebuilt modified blobs
