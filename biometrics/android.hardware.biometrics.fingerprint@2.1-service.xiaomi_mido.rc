@@ -30,22 +30,20 @@ on boot
     chown system system /sys/devices/soc/soc:fpc1020/spi_prepare
     chmod 0660 /sys/devices/soc/soc:fpc1020/spi_prepare
 
-# fpc fingerprint section - start
-on property:persist.sys.fp.vendor=switchf
+on property:sys.fp.vendor=switchf
     stop vendor.gx_fpd
-    setprop persist.sys.fp.vendor searchf
-    setprop persist.sys.fp.goodix 0
+    setprop sys.fp.vendor searchf
+    setprop fpc.fp.miui.token 0
     setprop ro.boot.fpsensor fpc
-    setprop ro.hardware.fingerprint fpc
+    setprop ro.hardware.fingerprint searchf
     start vendor.fps_hal
 
-# goodix fingerprint section - start
-on property:persist.sys.fp.vendor=goodix
-    setprop persist.sys.fp.goodix 1
-    setprop ro.boot.fpsensor gdx
-    setprop ro.hardware.fingerprint goodix 
-    start vendor.fps_hal
-# goodix fingerprint section - end
+on property:sys.fp.onstart=1
+   setprop goodix.fp.miui.analyse 1
+   setprop goodix.fp.miui.token 0
+   setprop ro.boot.fpsensor gdx
+   setprop ro.hardware.fingerprint goodix
+   start vendor.fps_hal
 
    setprop persist.sys.fp.vendor none
 	start vendor.gx_fpd
