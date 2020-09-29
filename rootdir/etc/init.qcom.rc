@@ -314,8 +314,8 @@ on property:vendor.radio.atfwd.start=false
     chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
     chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
 	
-	chown system system /sys/module/workqueue/paramaters/power_efficient
-	chmod 0644 /sys/module/workqueue/parameters/power_efficient
+    chown system system /sys/module/workqueue/paramaters/power_efficient
+    chmod 0644 /sys/module/workqueue/parameters/power_efficient
 
     # I/O
     write /sys/block/sda/queue/read_ahead_kb 128
@@ -333,7 +333,28 @@ on property:init.svc.qcom-post-boot=stopped
 
     write /sys/class/devfreq/1c00000.qcom,kgsl-3d0/min_freq 216000000
 # FrancoKernel - end
- 
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 652800
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2016000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1401600:40000"
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 85
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 60000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 480000
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1401600
+    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 0
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "80 652800:57 1036800:67 1401600:75 1689600:80 1843200:85 1958400:87"
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 39000
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 0
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 0
+    write /sys/devices/system/cpu/cpufreq/interactive/ignore_hispeed_on_notif 0
+    write /sys/devices/system/cpu/cpufreq/interactive/fast_ramp_down 0
+    write /sys/devices/system/cpu/cpufreq/interactive/align_windows 1
+    write /sys/devices/system/cpu/cpufreq/interactive/enable_prediction 0
+    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 0
+    write /sys/module/workqueue/parameters/power_efficient Y  
+
 # Notification LED
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/green/blink
