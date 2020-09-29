@@ -255,10 +255,8 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
-	init.spectrum.rc \
-	init.spectrum.sh \
-	move_time_data.sh \
-	move_wifi_data.sh \
+    move_time_data.sh \
+    move_wifi_data.sh \
     ueventd.qcom.rc
 
 # Keylayout

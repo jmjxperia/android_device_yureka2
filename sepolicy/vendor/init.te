@@ -21,9 +21,6 @@ allow init rild:process noatsecure;
 allow init rootfs:file execute_no_trans;
 allow init vendor_file:file { execute execute_no_trans };
 
-allow init su:process { transition rlimitinh };
-
-allow init su:process { siginh noatsecure };
 allow init sysfs_battery_supply:file setattr;
 allow init system_file:file { execute_no_trans };
 
